@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS Resource (
 ,   Name                    VARCHAR(30) NOT NULL
 );
 
---insert into Resource (Name) VALUES('Machine 1'),('Machine 2'),('Machine 3');
+INSERT INTO Resource (Name) VALUES('Machine 1'),('Machine 2'),('Machine 3');
 
 CREATE TABLE if NOT EXISTS Operation_Resource (
     Id                      INTEGER NOT NULL PRIMARY KEY

@@ -18,7 +18,9 @@ CREATE TABLE if NOT EXISTS Displacement (
 ,   Item_Id                 INTEGER NOT NULL
 ,   DisplacementKind_Id     INTEGER NOT NULL                    
 ,   Qty                     DECIMAL(38,9)
-,   EffektiveDate           DATE NOT NULL
+,   EffectiveDate           DATE NOT NULL
 ,   CONSTRAINT Displacement_FK01 FOREIGN KEY (Item_Id) REFERENCES Item(Id)
 ,   CONSTRAINT Displacement_FK02 FOREIGN KEY (DisplacementKind_Id) REFERENCES DisplacementKind(Id)
 );
+
+INSERT INTO Displacement(Item_Id, DisplacementKind_Id, Qty, EffectiveDate) VALUES(1, 4, -19288.0, strftime('%s', 'now', 'utc', '5 MONTHS'));
