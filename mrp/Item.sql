@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS Item (
     Id                  INTEGER NOT NULL PRIMARY KEY
 ,   Name                VARCHAR(30) NOT NULL
 );
-INSERT INTO Item(Name) values('Item 1'),('Item 2'),('Item 3'),('Item 4'),('Item 5'),('Item 6'),('Item 7'),('Item 8'),('Item 9'),('Item 10');
+-- INSERT INTO Item(Name) values('Item 1'),('Item 2'),('Item 3'),('Item 4'),('Item 5'),('Item 6'),('Item 7'),('Item 8'),('Item 9'),('Item 10');
 
 CREATE TABLE IF NOT EXISTS Location (
     Id                  INTEGER NOT NULL PRIMARY KEY
