@@ -1,17 +1,13 @@
-WITH RECURSIVE tree(i,j,k) AS (
-    SELECT 1, 21, 0
-
-    UNION ALL
-
-    SELECT i, i*20+k, k+1
-    FROM tree
-)
-select * from tree limit 20;
-
-select x.Id,z.Id
+-- insert into BOM (ParentItem_Id, ChildItem_Id, Qty)
+select x.Id, x.Id * 10 + z.Id +  10, 1
 from Item x
-inner join Item z on z.Id = x.Id*20+1 
+cross join (
+    select Id
+    from Item
+    where Id between 1 and 10
+) z
 where x.Id <= 20;
+--order by 1,2;
 
 /*
     1,21    i, i*20+1
