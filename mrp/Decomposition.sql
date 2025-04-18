@@ -8,15 +8,19 @@ WITH
         SELECT ParentItem_Id, ChildItem_Id, 1, Qty, Qty
         FROM BOM
 
-        UNION
+        UNION ALL
 
         SELECT  ParentItem_Id, ChildItem_Id, lvl + 1, Qty, Qty
         FROM  Decomposition
         WHERE ParentItem_Id = ChildItem_Id
 )
-SELECT ParentItem_Id, ChildItem_Id, lvl 
-FROM Decomposition
-WHERE ParentItem_Id = 1;
-
-
+SELECT 
+        DC.ParentItem_Id
+,       DC.ChildItem_Id
+,       DC.lvl
+,       DC.Qty
+FROM ItemSource
+INNER JOIN Item ON Item.ItemSourceId = ItemSource.Id
+INNER JOIN Decomposition AS DC ON DC.ParentItem_Id = Item.Id
+WHERE ItemSource.Source = 'FG'
 
